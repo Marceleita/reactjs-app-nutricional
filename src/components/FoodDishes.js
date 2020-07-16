@@ -1,31 +1,31 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import Grid from '@material-ui/core/Grid';
 import FoodDish from './FoodDish';
 import NoResults from './NoResults';
 
-const FoodDishes = ({ hits }) => (
+const FoodDishes = ({hits}) => (
     <Fragment>
         {
             hits.length ?
                 <div className="root">
-                    <Grid container spacing={ 3 } justify="center">
+                    <Grid container spacing={3} justify="center">
                         {
                             hits.map(hit => {
-                                const { uri, label, image, calories, ingredients} = hit.recipe;
+                                const {uri, label, image, calories, ingredients} = hit.recipe;
                                 return (
-                                    <FoodDish 
-                                        key={ uri }
-                                        label = { label }
-                                        image = { image }
-                                        calories = { calories }
-                                        ingredients = { ingredients }
+                                    <FoodDish
+                                        key = {uri}
+                                        label = {label}
+                                        image = {image}
+                                        calories = {calories}
+                                        ingredients = {ingredients}
                                     />
                                 );
                             })
                         }
                     </Grid>
                 </div>
-            : 
+            :
                 <NoResults />
         }
     </Fragment>
@@ -34,3 +34,4 @@ const FoodDishes = ({ hits }) => (
 FoodDishes.displayName = 'FoodDishes';
 
 export default FoodDishes;
+

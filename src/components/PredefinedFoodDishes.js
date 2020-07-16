@@ -1,31 +1,34 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { predefinedFoodDishes } from './../constants';
+import {predefinedFoodDishes} from './../constants';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 
-const PredefinedFoodDishes = ({}) => {
+const PredefinedFoodDishes = ({ getData, setHits }) => {
 
     const getFoods = title => {
-
+        predefinedFoodDishes.map(foodDish => {
+            foodDish.selected = foodDish.title === title ? !foodDish.selected : false;
+            return !foodDish.selected ? setHits()
+                : getData(document.querySelector(`#${ title }`).value.toLowerCase().trim());
+        });
     };
 
-
     return (
-        <Grid item xs={ 12 }>
-            <Paper className="papper">
+        <Grid item xs={12}>
+            <Paper className="paper">
                 {
                     predefinedFoodDishes.map(foodDish => {
-                        const { title, selected } = foodDish;
+                        const {title, selected} = foodDish;
                         return (
                             <ToggleButton
-                                key={ title }
-                                id={ title }
-                                value = { title }
-                                selected = { selected }
-                                onClick={ () => getFoods(title)}
+                                key = {title}
+                                id={title}
+                                value = {title}
+                                selected = {selected}
+                                onClick = { () => getFoods(title) }
                             >
-                                { title }
+                                {title}
                             </ToggleButton>
                         );
                     })
@@ -33,7 +36,7 @@ const PredefinedFoodDishes = ({}) => {
             </Paper>
         </Grid>
     );
-};
+}
 
 PredefinedFoodDishes.displayName = 'PredefinedFoodDishes';
 

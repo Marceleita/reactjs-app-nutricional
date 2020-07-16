@@ -5,16 +5,16 @@ const api_key = '99609981fefd375ae9c462e98ec26b09';
 export const getApiUrl = query => `${base_url}?q=${query}&app_id=${api_id}&app_key=${api_key}`;
 
 export const predefinedFoodDishes = [
-    {_id: 1, title: 'Eggs', selected: false},
-    {_id: 2, title: 'Chicken', selected: false},
-    {_id: 3, title: 'Milk', selected: false},
-    {_id: 4, title: 'Coffee', selected: false},
-    {_id: 5, title: 'Banana', selected: false},
-    {_id: 6, title: 'Burger', selected: false},
-    {_id: 7, title: 'Ramen', selected: false},
-    {_id: 8, title: 'Curry', selected: false},
-    {_id: 9, title: 'Sushi', selected: false},
-    {_id: 10, title: 'Lasagna', selected: false}
+    { _id: 1, title: 'Eggs', selected:false},
+    { _id: 2, title: 'Chicken', selected:false},
+    { _id: 3, title: 'Milk', selected:false},
+    { _id: 4, title: 'Coffee', selected:false},
+    { _id: 5, title: 'Banana', selected:false},
+    { _id: 6, title: 'Burger', selected:false},
+    { _id: 7, title: 'Ramen', selected:false},
+    { _id: 8, title: 'Curry', selected:false},
+    { _id: 9, title: 'Sushi', selected:false},
+    { _id: 1, title: 'Lasagna', selected:false}
 ];
 
 export const anyFoodDishes = [
@@ -29,3 +29,4 @@ export const anyFoodDishes = [
     {_id: 9, title: 'Oat'},
     {_id: 10, title: 'Lentils'},
 ];
+
